@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Define variables for colors and transitions */
+        :root {
+            --hue: 220; /* Adjust this value for your desired color */
+            --trans-dur: 0.3s;
+            --bg: #ffffff; /* Background color */
+            --fg: #333333; /* Foreground color (text) */
+        }
+
+        body {
+            font-family: Nunito, sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            transition: background-color var(--trans-dur), color var(--trans-dur);
+            margin: 0;
+        }
+
+        /* Style the login container */
+        .login {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Style the left column */
+        .login__col {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Style the right column with background image */
+        .login__bg-img {
+            background-color: hsl(var(--hue), 90%, 50%);
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Style the brand logo */
+        .login__brand:before {
+            background-color: var(--fg);
+            border-radius: 50%;
+            content: "";
+            display: block;
+            margin-right: 0.5em;
+            width: 0.75em;
+            height: 0.75em;
+            transition: background-color var(--trans-dur);
+        }
+
+        /* Style the login form */
+        .login_form {
+            max-width: 400px;
+            width: 100%;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.2em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login_form-wrapper {
+            text-align: center;
+        }
+
+        /* Style form labels */
+        .login__label {
+            font-size: 1.2em;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        /* Style form fields */
+        .login__field {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 0.2em;
+            font-size: 1em;
+        }
+
+        /* Style form buttons */
+        .login__btn {
+            background-color: hsl(var(--hue), 90%, 50%);
+            border: none;
+            border-radius: 0.2em;
+            cursor: pointer;
+            color: hsl(8, 0%, 100%);
+            margin-bottom: 1.5em;
+            display: block;
+            outline: transparent;
+            padding: 0.5em 1.5em;
+            position: relative;
+            width: 100%;
+            transition: background-color var(--trans-dur), opacity var(--trans-dur);
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .login__btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .login__btn:not(:disabled):focus-visible,
+        .login__btn:not(:disabled):hover {
+            background-color: hsl(var(--hue), 90%, 30%);
+        }
+
+        /* Style the spinner animation */
+        .login__btn-spinner,
+        .login__btn-spinner:before,
+        .login__btn-spinner:after {
+            animation: spinner 1s ease-in-out infinite;
+            background-color: hsl(8, 0%, 100%);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        @keyframes spinner {
+            0%, 100% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="login">
+        <div class="login_col">
+            <form class="login_form" method="post" action="">
+                <div class="login_form-wrapper">
+                    <p>Sign in to your account.</p>
+                    <div class="loginfield-group">
+                        <input class="loginfield" id="user-email" type="text" name="user_email" />
+                        <input class="logincheckbox" type="checkbox" name="remember_me">
+                        <a href="#">Forgot password</a>
+                    </div>
+                    <p class="loginsign-up">Don't have an account? <a href="#">Sign up</a></p>
+                    <div class="login_testimonial"></div>
+                </div>
+                <h1>Welcome back</h1>
+                <label class="login__label" for="user-email">Username or Email</label>
+                <div class="login_field-group">
+                    <label class="login_label" for="pass">Password</label>
+                    <input class="login__field" id="pass" type="password" name="pass" />
+                </div>
+                <div class="login_field-group login_field-group--horz">
+                    <label class="loginlabel login_label--horz">
+                        <span>Remember me</span>
+                    </label>
+                    <button class="login__btn" type="button" data-login="false">
+                        <span class="login_btn-label">Sign in</span>
+                        <span class="login_btn-spinner"></span>
+                    </button>
+                </div>
+            </form>
+            <footer class="login___copyright"></footer>
+        </div>
+        <div class="login__col">
+            <div class="login__bg-img">
+                <p><q>Assduff Jekyll has helped us kick-start projects in a bang and save thousands of hours of work.</q></p>
+                <p>Ann Thrax</p>
+                <p><small>Senior UX Designer, X.Y. Zee</small></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

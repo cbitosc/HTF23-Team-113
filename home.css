@@ -1,0 +1,117 @@
+body, h1, h2, h3, p, ul, li, a, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply background color and style to the header */
+header {
+    background-color: #F6F6F2; /* Blue background color */
+    color: #6FB3B8; /* White text color */
+    text-align: center;
+    padding: 80px 0;
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #2980b9; /* Slightly darker blue border */
+    border-radius: 5px;
+    width: 60%;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #6FB3B8; /* Blue button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #388087; /* Slightly darker blue on hover */
+    color: #fff;
+}
+
+/* Style the new releases section */
+.new-releases {
+    background-color: #BADFE7; /* Slightly darker blue background color */
+    padding: 40px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #fff; /* White text color */
+}
+
+.new-releases h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Style the recommended movies section */
+.recommended-movies {
+    background-color: #6FB3B8; /* Darker blue background color */
+    padding: 40px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #fff; /* White text color */
+}
+
+.recommended-movies h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Style the footer */
+footer {
+    background-color: #3498db; /* Blue background color */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style for movie cards in the "New Releases" section */
+.movie-cards {
+    display: flex;
+    flex-wrap: wrap; /* Wrap movie cards to the next line if they don't fit */
+    justify-content: space-between; /* Distribute movie cards evenly */
+}
+
+.movie-card {
+    width: calc(33.33% - 20px); /* Adjust the width as needed */
+    margin-bottom: 20px;
+    background-color: #2980b9;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.movie-card p {
+    font-size: 1rem;
+    margin-top: 10px;
